@@ -8,5 +8,6 @@ class AppRouter extends $AppRouter{
     AutoRoute(page: RouteA.page, initial: true),
     AutoRoute(page: RouteB.page),
     AutoRoute(page: RouteC.page),
+    AutoRoute(page: OtherRoute.page),
   ];
 }

@@ -14,7 +14,7 @@ class ScreenC extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [ElevatedButton(child: const Text('Goto Screen A'),
-      onPressed: (){AutoRouter.of(context).push(const RouteA()) ; },
+      onPressed: (){AutoRouter.of(context).push(const OtherRoute()) ; },
       )
       ],
       ),
