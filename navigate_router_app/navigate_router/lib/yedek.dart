@@ -1,5 +1,20 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -10,7 +25,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
+  // Define your tabs here
   final List<Widget> _tabs = [
+    // Replace these with the actual widgets you want to display
     Container(
       child: const Center(
         child: Text('Map Content'),
@@ -30,6 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double iconHeightmain = MediaQuery.of(context).size.width * 0.25;
+    double iconHeight = MediaQuery.of(context).size.width * 0.25;
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -43,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             right: 0,
             bottom: -30,
             child: Container(
-              height: kBottomNavigationBarHeight + 70,
+              height: kBottomNavigationBarHeight + 70, // Increase the height
               decoration: const BoxDecoration(
                 color: Colors.transparent,
                 image: DecorationImage(
@@ -71,16 +91,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   items: [
                     BottomNavigationBarItem(
                       icon: Image(
-                        image: const AssetImage('assets/images/Hover.png'),
-                        height: MediaQuery.of(context).size.width * 0.05,
+                        image: AssetImage('assets/images/Hover.png'),
+                        height: iconHeight,
                       ),
                       label: '',
                     ),
                     BottomNavigationBarItem(
                       icon: SizedBox(
-                        height: MediaQuery.of(context).size.width * 0.05,
-                        width: MediaQuery.of(context).size.width * 0.05,
-                        child: const Image(
+                        height: iconHeightmain,
+                        width: iconHeight,
+                        child: Image(
                           image: AssetImage('assets/images/Button.png'),
                         ),
                       ),
@@ -88,8 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     BottomNavigationBarItem(
                       icon: Image(
-                        image: const AssetImage('assets/images/List.png'),
-                        height: MediaQuery.of(context).size.width * 0.05,
+                        image: AssetImage('assets/images/List.png'),
+                        height: iconHeight,
                       ),
                       label: '',
                     ),
